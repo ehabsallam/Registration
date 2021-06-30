@@ -1,0 +1,149 @@
+﻿@model Registration.Models.professor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+
+
+<h2> Idea Team </h2>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayName("idea")
+        </th>
+        <th></th><th></th>
+        <th>
+            @Html.DisplayName("Desc")
+        </th>
+        <th></th><th></th>
+        <th>
+            @Html.DisplayName("Tools")
+        </th>
+        <th></th><th></th>
+    </tr>
+    <tr>
+        <td>
+            <h5>@ViewBag.dataidea.idea</h5>
+        </td>
+        <th></th><th></th>
+        <td>
+            <h5>@ViewBag.dataidea.desc</h5>
+        </td>
+        <th></th><th></th>
+        <td>
+            <h5>@ViewBag.dataidea.tools</h5>
+        </td>
+        <th></th><th></th>
+    </tr>
+
+</table>
+
+<h2> Team Leader </h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayName("Name ")
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+            @Html.DisplayName("Gba")
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+            @Html.DisplayName("Level")
+        </th>
+        <th></th>
+        <th></th>
+        <th>
+            @Html.DisplayName("skill")
+        </th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <h5>@ViewBag.leader.nameLeader</h5>
+        </td>
+        <th></th>
+        <th></th>
+        <td>
+            <h5>@ViewBag.leader.gbaLeader</h5>
+        </td>
+        <th></th>
+        <th></th>
+        <td>
+            <h5>@ViewBag.leader.levelLeader</h5>
+        </td>
+        <th></th>
+        <th></th>
+        <td>
+            <h5>@ViewBag.leader.skillLeaer</h5>
+        </td>
+        <th></th>
+        <th></th>
+    </tr>
+
+</table>
+
+<h2>Student </h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th></th><th></th>
+        <th>
+            @Html.DisplayName("Gba")
+        </th>
+        <th></th><th></th>
+        <th>
+            @Html.DisplayName("Level")
+        </th>
+        <th></th><th></th>
+        <th>
+            @Html.DisplayName("Skill")
+        </th>
+        <th></th><th></th>
+    </tr>
+
+    @for (int i = 0; i < ViewBag.student.Count; i++)
+    {
+        <tr>
+            <td>
+                <h5>@ViewBag.student[i].nameStd</h5>
+            </td>
+            <th></th><th></th>
+
+            <td>
+                <h5>@ViewBag.student[i].gbaStd</h5>
+            </td>
+            <th></th><th></th>
+            <td>
+                <h5>@ViewBag.student[i].levelStd</h5>
+            </td>
+            <th></th><th></th>
+            <td>
+                <h5>@ViewBag.student[i].skillStd</h5>
+            </td>
+            <th></th><th></th>
+        </tr>
+    }
+
+    </table>
+
+
+    @Html.ActionLink("Accept", "Accept", new { id = @ViewBag.dataidea.id })
+
+    @Html.ActionLink("Reject", "Reject", new { id = @ViewBag.dataidea.id })
+
+
+
+
+

@@ -1,0 +1,108 @@
+﻿@model Registration.viewmodel.TeamIdea
+
+@{
+    ViewBag.Title = "registrationStudent";
+    Layout = "~/Views/Shared/_Registraion.cshtml";
+}
+
+<h2>registrationStudent</h2>
+@*<input type="number" required="" min="0" max="30" />*@
+@*@Html.TextBoxFor(x => x.nameStd, new { @type = "number", @class = "txt", required = "", min = "0", max = "30" });
+<input type="submit" />*@
+<div style=" height:550px;">
+    @using (Html.BeginForm())
+    {//for loop
+
+        @*<div  class="box1">ADD New Member</div>*@
+        <div class="box">
+            <h3>Step 1</h3>
+            <h4 class="lbl">
+
+                @{if (ViewBag.check == -1)
+                {@Html.Label("Team Leader ");
+                }
+                else if (ViewBag.check == 0)
+                {@Html.Label("Member One ");
+                }
+                else if (ViewBag.check == 1)
+                {@Html.Label("Member Two ");
+                }
+                else if (ViewBag.check == 2)
+                {@Html.Label("Member Three ");
+                }
+                else if (ViewBag.check == 3)
+                {@Html.Label("Member Four ");
+                }}
+            </h4>
+
+            <div class="form-group">
+                @{
+        if (ViewBag.test == false)
+        {@Html.TextBoxFor(x => x.leader.nameLeader, new { @placeholder = "Enter Name team leader ", required = "" }) ;
+       @Html.TextBoxFor(x => x.leader.idLeader, new { @placeholder = "Enter team leader Id Fcih ",type="number", @class = "txt", required = "", min = "1" ,max="20150700" });
+        }
+        else
+        {@Html.TextBoxFor(x => x.std.nameStd, new { @placeholder = "Enter Name Member  ", required = "" });
+        }}
+            </div>
+
+            <div class="form-group">
+                @{if (ViewBag.test == false)
+                { @Html.TextBoxFor(x => x.std.levelStd, new { @placeholder = "Enter team leader Level ", @class = "txt", type = "number", required = "", min = "1", max = "4" })
+                }
+                else
+                {@Html.TextBoxFor(x => x.std.levelStd, new { @placeholder = "Enter Member Level ", @class = "txt", type = "number", required = "", min = "1", max = "4" })}}
+            </div>
+
+            <div class="form-group">
+
+                @{if (ViewBag.test == false)
+                {@Html.TextBoxFor(x => x.leader.gbaLeader, new { @placeholder = "Enter team leader Gba ", @class = "txt", type = "number", required = "", min = "0", max = "4" })
+                }
+                else
+                {@Html.TextBoxFor(x => x.std.gbaStd, new { @placeholder = "Enter Member Gba ", @class = "txt", type = "number", required = "", min = "0", max = "4" })
+                }}
+            </div>
+
+            <div class="form-group">
+                @{
+        if (ViewBag.test == false)
+        { @Html.TextBoxFor(x => x.leader.skillLeaer, new { @placeholder = "Enter team leader Skill ", required = "" })
+        }
+        else
+        { @Html.TextBoxFor(x => x.std.skillStd, new { @placeholder = "Enter Member Skill ", required = "" })
+        }}
+            </div>
+
+            @*<div class="form-group">
+                        @{
+                if (ViewBag.test == false)
+                {
+                    @Html.TextBoxFor(c => c.dbleader.script, new { type = "file", @class = "txt", @placeholder = "Choose File From Here " })
+                }
+                else
+                {
+                    @Html.TextBoxFor(c => c.dbstu.script, new { type = "file", @class = "txt", @placeholder = "Choose File From Here " })
+                  }
+                        }
+                    </div>*@
+            <input type="submit" value="Next" name="login">
+
+        </div>
+
+        
+    }
+
+</div>
+
+@*<div
+<p>Don't Have an Account ?<a href="#">Register Now</a></p>
+</div>*@
+
+<script>
+    $(function () {
+        $(".box").slideUp(500).slideDown(3500);
+    })
+
+</script>
+

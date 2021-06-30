@@ -1,0 +1,40 @@
+﻿@model Registration.viewmodel.TeamIdea
+
+@{
+    ViewBag.Title = "registrationIdea";
+    Layout = "~/Views/Shared/_Registraion.cshtml";
+}
+
+<h2>registrationIdea</h2>
+<div style=" height:550px;">
+    @using (Html.BeginForm())
+    {   <div class="box">
+        <h3>Step 2</h3>
+        <h4 class="lbl">Idea Desc</h4>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.idea.idea, new { @placeholder = "Enter Idea Team", required = "" })
+        </div>
+
+        <div class="form-group">
+
+            @*@Html.LabelFor(m => m.dbstu.GbaTeamLeader)*@
+            @Html.TextBoxFor(x => x.idea.tools, new { @placeholder = "Enter Tools Idea", required = "" })
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(m => m.dbstu.SkillTeamLeader)*@
+            @Html.TextAreaFor(x => x.idea.desc, new { @placeholder = "Enter Disc Idea ", @class = "txt", required = "" })
+        </div>
+            <input type="submit" value="Next" name="login">
+    </div>
+       
+
+    }
+    </div>
+
+    <script>
+        $(function () {
+            $(".box").slideUp(500).slideDown(3500);
+        })
+
+    </script>
